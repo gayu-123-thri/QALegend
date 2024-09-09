@@ -17,7 +17,7 @@ public class ExelUtility
  {
 	 try
 	 {
-	 f=new FileInputStream("C:\\Users\\gayut\\eclipse-workspace\\QA_Legend\\src\\test\\resources\\TestData.xlsx");
+	 f=new FileInputStream("C:\\Users\\gayut\\git\\QALegend\\QA_Legend\\src\\test\\resources\\TestData.xlsx");
 	 w=new XSSFWorkbook(f);
 	 s=w.getSheet(sheet);
 	 XSSFRow r=s.getRow(row);
@@ -33,7 +33,7 @@ public class ExelUtility
  {
 	 try
 	 {
-	 f=new FileInputStream("C:\\Users\\gayut\\eclipse-workspace\\QA_Legend\\src\\test\\resources\\TestData.xlsx");
+	 f=new FileInputStream("C:\\Users\\gayut\\git\\QALegend\\QA_Legend\\src\\test\\resources\\TestData.xlsx");
 	 w=new XSSFWorkbook(f);
 	 s=w.getSheet(sheet);
 	 XSSFRow r=s.getRow(row);
