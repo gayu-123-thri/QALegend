@@ -24,6 +24,10 @@ public class UsersPage
 		 WebElement result_table;
 		 @FindBy(xpath="//a[@href='https://qalegend.com/billing/public/home']")
 		 WebElement home_page_field;
+		 @FindBy(xpath="//i[@class='glyphicon glyphicon-edit']")
+		 WebElement edit_field;
+		 @FindBy(xpath="//a[@href='https://qalegend.com/billing/public/users/3661']")
+		 WebElement view_field;
 
 		 
 		 public AddUserPage button_Add()
@@ -32,7 +36,7 @@ public class UsersPage
 			return new AddUserPage(driver);
 			 
 		 }
-		 public void seach_User(String searchdata)
+		 public void search_User(String searchdata)
 		 {
 			 search_field.sendKeys(searchdata);
 		 }
@@ -47,6 +51,16 @@ public class UsersPage
 		 {
 			 home_page_field.click();
 			return new HomePage(driver);
+		 }
+		 public EditUserPage click_ONEdit_Field()
+		 {
+			 edit_field.click();
+			 return new EditUserPage(driver);
+		 }
+		 public ViewUserPage click_On_ViewButton()
+		 {
+			 view_field.click();
+			return new ViewUserPage(driver);
 		 }
 		 
 		 

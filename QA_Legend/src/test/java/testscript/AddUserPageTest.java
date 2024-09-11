@@ -49,7 +49,7 @@ public class AddUserPageTest extends Base_Class
 		 adduser.enter_Password(passwd);
 		 adduser.enter_ConfirmPassword(passwd);
 		 adduser.ClickOn_SaveButton();
-		 users.seach_User(user_name);
+		 users.search_User(user_name);
 		 String actual_result=users.display_Table();
 		 Assert.assertEquals(actual_result, user_name, Messages.USERADD);
 		 

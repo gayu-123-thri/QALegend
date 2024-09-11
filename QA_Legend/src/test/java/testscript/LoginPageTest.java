@@ -17,13 +17,13 @@ import utilities.WaitUtility;
 
 public class LoginPageTest extends Base_Class
 {
-@Test
+@Test(groups={"regression","sanity"})
 	
  public void verify_Login_With_Valid_Credentials()
  {
 	String user_name=ExelUtility.get_Stringdata(0, 0, Constants.LOGINPAGE);
 	String pass_word=ExelUtility.get_Integerdata(0, 1, Constants.LOGINPAGE);
-   	String expected_result=Constants.MESSAGE+Constants.SPACE+ExelUtility.get_Stringdata(1, 0, Constants.LOGINPAGE)+Constants.LOGINPAGEEXTENSION;
+   	String expected_result=Constants.MESSAGE+ExelUtility.get_Stringdata(1, 0, Constants.LOGINPAGE)+Constants.LOGINPAGEEXTENSION;
 	 LoginPage login=new LoginPage(driver);
 	 login.enter_Username(user_name);
 	 login.enter_Password(pass_word);

@@ -1,14 +1,16 @@
 package listeners;
 
 import org.testng.ITestContext;
+import org.testng.ITestListener;
 import org.testng.ITestResult;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 
+import automation_core.Base_Class;
 import extentreport.ExtentManager;
 
-public class ExtendListeners {
+public class ExtendListeners extends Base_Class implements ITestListener{
 	private static final ExtentReports extent=ExtentManager.createInstance();
 	private static final ThreadLocal <ExtentTest> test = new ThreadLocal();		
 	
