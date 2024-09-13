@@ -6,6 +6,9 @@ import org.testng.Assert;
 import org.testng.annotations.Test;
 
 import automation_core.Base_Class;
+import constants.Constants;
+import pageobject.HomePage;
+import pageobject.LoginPage;
 import utilities.ExelUtility;
 
 public class HomePageTest extends Base_Class
@@ -14,21 +17,21 @@ public class HomePageTest extends Base_Class
 	
  public void verify_userLogin_date()
  {
-	 String username=ExelUtility.get_Stringdata(0, 0, "HomePageTest");
-	 String passwd=ExelUtility.get_Integerdata(0, 1, "HomePageTest");
-	 WebElement username_fld=driver.findElement(By.xpath("//input[@name='username']"));
-	 username_fld.sendKeys(username);
-	 WebElement password_fld=driver.findElement(By.xpath("//input[@name='password']"));
-	 password_fld.sendKeys(passwd);
-	 WebElement login_btnfld=driver.findElement(By.xpath("//button[@class='btn btn-primary']"));
-	 login_btnfld.click();
-	 WebElement alert_btn=driver.findElement(By.xpath("//button[@data-role='end']"));
-	 alert_btn.click();
-	 WebElement date=driver.findElement(By.xpath("//strong[text()='03-09-2024']"));
-	 String actual_result=date.getText();
-	 System.out.println(actual_result);
-	 String expected_result=ExelUtility.get_Integerdata(1, 0, "HomePageTest");
-	 System.out.println(expected_result);
-	 Assert.assertEquals(actual_result, expected_result, "Date Missmatch");
+		String user_name=ExelUtility.get_Stringdata(0, 0, Constants.LOGINPAGE);
+		String pass_word=ExelUtility.get_Integerdata(0, 1, Constants.LOGINPAGE);
+	   	String expected_result=Constants.MESSAGE+ExelUtility.get_Stringdata(1, 0, Constants.LOGINPAGE)+Constants.LOGINPAGEEXTENSION;
+		 LoginPage login=new LoginPage(driver);
+		 login.enter_Username(user_name);
+		 login.enter_Password(pass_word);
+		 HomePage home=login.click_onLogin_Button();
+		 home.clic_ONalertButton();
+		 String homepage_Date=home.get_LoginDate();
+		 String current_date=home.get_CurrentDate();
+		 Assert.assertEquals(homepage_Date, current_date,"Date Missmatch" );
+		 
  }
+	
+		
+		
+	
 }

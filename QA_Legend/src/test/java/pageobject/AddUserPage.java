@@ -23,7 +23,7 @@ public class AddUserPage
 	WebElement lastname_field;
 	@FindBy(xpath="//input[@id='email']")
 	WebElement email_field;
-	@FindBy(xpath="//b[@role='presentation']")
+	@FindBy(xpath="//select[@class='form-control select2 select2-hidden-accessible' and @id='role']")
 	WebElement role_field;
 	@FindBy(xpath="//input[@id='username']")
 	WebElement username_field;
@@ -35,7 +35,18 @@ public class AddUserPage
 	WebElement save_button_field;
 	
 	
-	public void prefix_Box()
+	public void add_userDatas(String fname, String lname, String email, String uname, String passwd, String confirmpasswd )
+	{
+		prefix_fld.sendKeys("Mrs");
+		firstname_field.sendKeys(fname);
+		lastname_field.sendKeys(lname);
+		email_field.sendKeys(email);
+		PageUtility.select_TextOperation(role_field,"Admin");
+		username_field.sendKeys(uname);
+		password_field.sendKeys(passwd);
+		confirm_passwordfield.sendKeys(confirmpasswd);
+	}
+	/*public void prefix_Box()
 	{
 		prefix_fld.sendKeys("Mrs");
 	}
@@ -53,7 +64,8 @@ public class AddUserPage
 	}
 	public void role_FieldSelection()
 	{
-		PageUtility.select_TextOperation(role_field,"Producer" );
+		PageUtility.select_TextOperation(role_field,"Admin");
+		
 	}
 	public void enter_UserName(String uname)
 	{
@@ -66,7 +78,7 @@ public class AddUserPage
 	public void enter_ConfirmPassword(String confirmpasswd)
 	{
 		confirm_passwordfield.sendKeys(confirmpasswd);
-	}
+	}*/
 	public UsersPage ClickOn_SaveButton()
 	{
 		save_button_field.click();

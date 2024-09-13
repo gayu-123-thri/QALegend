@@ -4,35 +4,15 @@
 	<test thread-count="5" name="loginPageTest">
 	<parameter name="browser" value="Chrome"></parameter>
     <classes>
-     <!--  <class name="testscript.UserActionsPageTest"/>
-      <class name="testscript.ResetPageTest"/>
-      <class name="testscript.AddUserPageTest"/>
-      <class name="testscript.HomePageTest"/>-->
       <class name="testscript.LoginPageTest">
-      <methods>
-		<include name="verify_Login_With_Valid_Credentials"></include>
-		<include name="verify_errorMessage_whileLogin_withInvalid_credentials"></include>
-	  </methods>
 	  </class>
       </classes>
       </test>
-      <test thread-count="5" name="homePageTest">
-	  <parameter name="browser" value="Chrome"></parameter>
-	  <classes> 
-	  <class name="testscript.HomePageTest"/>
-	  </classes>
-	  </test>
-	  <test thread-count="5" name="addUserPageTest">
-		<parameter name="browser" value="Chrome"></parameter>
-		<classes>
-			<class name="testscript.AddUserPageTest"/>
-		</classes>
-		</test>
-		<test thread-count="5" name="resetPageTest">
-		<parameter name="browser" value="Chrome"></parameter>
-		<classes>
-			<class name="testscript.ResetPageTest"/>
-		</classes>
-
+      <test thread-count="5" name="adduserPageTest">
+	<parameter name="browser" value="Chrome"></parameter>
+    <classes>
+      <class name="testscript.AddUserPageTest">
+	  </class>
+      </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
