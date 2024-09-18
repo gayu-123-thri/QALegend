@@ -9,6 +9,7 @@ import org.testng.annotations.Test;
 import automation_core.Base_Class;
 import constants.Constants;
 import constants.Messages;
+import pageobject.ActionPage;
 import pageobject.AddUserPage;
 import pageobject.HomePage;
 import pageobject.LoginPage;
@@ -79,5 +80,30 @@ public class AddUserPageTest extends Base_Class
 	 Assert.assertEquals(actual_result, expected_result, Messages.INVALIDUSERADD);
 	 
 
+ }
+ @Test
+ public void download_createdUser_Details()
+ {
+	 String username=ExelUtility.get_Stringdata(0, 0, Constants.ADDUSERSPAGE);
+	 String password=ExelUtility.get_Integerdata(0, 1, Constants.ADDUSERSPAGE);
+	 
+	 String fst_name=RandomDataUtility.get_FirstName();
+	 String lst_name=RandomDataUtility.get_LastName();
+	 String email_fld=fst_name+Constants.ADDUSERSPAGEDOTEXTENSION+lst_name+Constants.ADDUSERSPAGEEMAILEXTENSION;
+	 String user_name=fst_name+lst_name;
+	 String passwd=fst_name+lst_name;
+	 
+	 LoginPage login=new LoginPage(driver); 
+	 login.enter_Username(username);
+	 login.enter_Password(password);
+	 HomePage home=login.click_onLogin_Button();
+	 home.clic_ONalertButton();
+	 UsersManagementPage usermanagement=home.clickON_UserManagement_Field();
+	 UsersPage users=usermanagement.clickOn_users_field();
+	 AddUserPage adduser=users.button_Add();
+	 adduser.add_userDatas(fst_name, lst_name, email_fld, user_name, passwd, passwd);
+	 adduser.ClickOn_SaveButton();
+	 users.search_User(user_name);
+	 users.selectFrom_Action_Field();
  }
 }

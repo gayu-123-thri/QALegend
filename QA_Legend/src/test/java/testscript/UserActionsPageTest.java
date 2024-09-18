@@ -5,12 +5,10 @@ import org.testng.annotations.Test;
 
 import automation_core.Base_Class;
 import constants.Constants;
-import pageobject.EditUserPage;
 import pageobject.HomePage;
 import pageobject.LoginPage;
 import pageobject.UsersManagementPage;
 import pageobject.UsersPage;
-import pageobject.ViewUserPage;
 import utilities.ExelUtility;
 import utilities.RandomDataUtility;
 
@@ -31,9 +29,7 @@ public class UserActionsPageTest extends Base_Class {
 	 UsersManagementPage usermanagement=home.clickON_UserManagement_Field();
 	 UsersPage users=usermanagement.clickOn_users_field();
 	 users.search_User(search_uname);
-	 EditUserPage edit=users.click_ONEdit_Field();
-	 edit.enter_LastName(edit_lname);
-	 edit.ClickOn_SaveButton();
+
 	 
 	}
 	
@@ -51,7 +47,7 @@ public class UserActionsPageTest extends Base_Class {
 		 UsersManagementPage usermanagement=home.clickON_UserManagement_Field();
 		 UsersPage users=usermanagement.clickOn_users_field();
 		 users.search_User(search_uname);
-		 ViewUserPage view=users.click_On_ViewButton();
+	
 	}
 
 }

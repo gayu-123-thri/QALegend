@@ -12,11 +12,10 @@ import org.openqa.selenium.support.ui.Select;
 public class PageUtility
 
 {
- public static String select_TextOperation(WebElement element, String text )
+ public static void select_TextOperation(WebElement element, String text )
  {
 	  Select select=new Select(element);
 	  select.selectByVisibleText(text);
-	  return text;
  }
  public static void select_ValueOperation(WebElement element, String value)
  {

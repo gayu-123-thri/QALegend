@@ -60,7 +60,7 @@ public class Base_Class
      //driver.get("https://qalegend.com/billing/public/login");
 	 driver.get(prop.getProperty("url"));
  }
- @BeforeMethod
+ @BeforeMethod(alwaysRun=true)
  
  public void setup()
 

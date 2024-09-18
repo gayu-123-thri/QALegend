@@ -29,6 +29,15 @@ public class HomePage
 	WebElement user_result;
 	@FindBy(xpath="//div[@class='m-8 pull-left mt-15 hidden-xs']")
 	WebElement login_date;
+	@FindBy(xpath="//a[@class='dropdown-toggle']")
+	WebElement admin ;
+	@FindBy(xpath="//a[text()='Profile']")
+	WebElement profilefield ;
+	@FindBy(xpath="//i[@class='fa fa-truck']")
+	WebElement clickstocktransfer;
+	@FindBy(xpath="//a[@href='https://qalegend.com/billing/public/modules/kitchen']")
+	WebElement kitchen_fld;
+
 	
 	
 	
@@ -70,6 +79,26 @@ public class HomePage
 	public String get_CurrentDate()
 	{
 		return DateUtility.get_UserLogin_Date("dd-MM-YYYY");
+	}
+	public void click_On_Adminabc()
+	{
+		admin.click();
+	}
+	public AdminUpdateProfilePage click_On_Profile_Field()
+	{
+		profilefield.click();
+		return new AdminUpdateProfilePage(driver);
+	}
+	public StockTransferPage click_On_Stock_Transfer() 
+	{
+		clickstocktransfer.click();
+		return new StockTransferPage(driver);
+	}
+	public KitchenPage click_on_Kitchen_Field()
+	{
+		kitchen_fld.click();
+		return null;
+		
 	}
 
 	

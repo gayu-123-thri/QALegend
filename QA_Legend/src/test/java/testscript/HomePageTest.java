@@ -7,6 +7,7 @@ import org.testng.annotations.Test;
 
 import automation_core.Base_Class;
 import constants.Constants;
+import constants.Messages;
 import pageobject.HomePage;
 import pageobject.LoginPage;
 import utilities.ExelUtility;
@@ -27,7 +28,7 @@ public class HomePageTest extends Base_Class
 		 home.clic_ONalertButton();
 		 String homepage_Date=home.get_LoginDate();
 		 String current_date=home.get_CurrentDate();
-		 Assert.assertEquals(homepage_Date, current_date,"Date Missmatch" );
+		 Assert.assertEquals(homepage_Date, current_date, Messages.DATE);
 		 
  }
 	

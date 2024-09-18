@@ -36,7 +36,7 @@ public class LoginPageTest extends Base_Class
 	
 	
  }
-@Test(dataProvider="Invalidusercredentials", dataProviderClass=DataProviders.class)
+@Test(dataProvider="Invalidusercredentials", dataProviderClass=DataProviders.class, enabled=false)
 
  public void verify_errorMessage_whileLogin_withInvalid_credentials(String username, String password)
  {

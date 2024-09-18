@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
+import utilities.PageUtility;
 import utilities.WaitUtility;
 
 public class UsersPage 
@@ -28,6 +29,8 @@ public class UsersPage
 		 WebElement edit_field;
 		 @FindBy(xpath="//a[@href='https://qalegend.com/billing/public/users/3661']")
 		 WebElement view_field;
+		 @FindBy(xpath="//li[@class='dt-button buttons-pdf buttons-html5 bg-info' and @aria-controls='users_table']")
+		 WebElement action_fld;
 
 		 
 		 public AddUserPage button_Add()
@@ -52,15 +55,10 @@ public class UsersPage
 			 home_page_field.click();
 			return new HomePage(driver);
 		 }
-		 public EditUserPage click_ONEdit_Field()
+		 
+		 public void selectFrom_Action_Field()
 		 {
-			 edit_field.click();
-			 return new EditUserPage(driver);
-		 }
-		 public ViewUserPage click_On_ViewButton()
-		 {
-			 view_field.click();
-			return new ViewUserPage(driver);
+			 PageUtility.select_IndexOperation(action_fld, "5");
 		 }
 		 
 		 
